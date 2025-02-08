@@ -61,6 +61,9 @@ app.delete("/api/tasks/:id", async (req, res) => {
   res.send("Task Deleted");
 });
 
+app.use("/", (req, res) => {
+  res.send("Done!");
+});
 // Serve frontend (React build files)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "client/build")));
